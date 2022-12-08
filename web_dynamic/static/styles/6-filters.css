@@ -101,3 +101,12 @@ button:hover {
 .locations:hover .popover {
     visibility: visible;
 }
+
+.amenities ul li {
+    display: flex;
+    gap: 10px;
+}
+
+.amenities ul li input {
+    margin-left: 25px;
+}

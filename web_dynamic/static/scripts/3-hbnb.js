@@ -26,7 +26,7 @@ $(document).ready(function () {
     contentType: 'application/json',
     data: '{}',
     dataType: 'json',
-    success: function(body, textStatus, jqXHR){
+    success: function(body){
       body.forEach(place => {
         const guests = place.max_guest != 1 ? 's' : '';
         const bedrooms = place.number_rooms != 1 ? 's' : '';
@@ -41,18 +41,11 @@ $(document).ready(function () {
           <div class="number_rooms">${place.number_rooms} Bedroom${bedrooms}</div>
           <div class="number_bathrooms">${place.number_bathrooms} Bathroom${bathrooms}</div>
 	      </div>
-	      <div class="user">
-            <b>Owner:</b> ${place.user.first_name} ${place.user.last_name}
-        </div>
         <div class="description">
 	        ${place.description}
         </div>
         </article>`);
       });
     },
-    error: function(XMLHttpRequest, textStatus, errorThrown){
-      alert('error: ' + errorThrown);
-      $("#results").append("error");
-    }
   });
 });
